@@ -5,7 +5,7 @@ let prevNum = "";
 const arrOper = ["+", "-", "/", "*"];
 
 class Numbers {
-  obj(button) {
+  handleButtonClick(button) {
     if (button.textContent === "=") {
       if (display.value === "") return;
       const lastELement = display.value.slice(-1);
@@ -31,9 +31,9 @@ class Numbers {
     display.value += button.textContent;
   }
 }
-const obj = new Numbers();
+const  handleButtonClick = new Numbers();
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    obj.obj(button)
+    handleButtonClick.handleButtonClick(button)
   });
 });
